@@ -1,0 +1,36 @@
+#about {
+    $home-image: url('../images/about.jpg');
+    @include background($home-image);
+}
+.content-container {
+    display: grid;
+    grid-template-columns: 400px auto auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+.content-about1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.content-about2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 26px;
+}
+.content-about3 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    font-size: 26px;
+}
+.about-header {
+    margin-top: 5vh;
+}
+.about-image {
+    background-image: url('../images/family.jpg');
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+    border-radius: 100px;
+    box-shadow:  5px 5px 5px 5px #111;
+
+}

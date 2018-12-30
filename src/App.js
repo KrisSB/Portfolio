@@ -1,28 +1,106 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './sass/App.scss';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom' //React Router to transition between Pages
+import Media from "react-media"; //Gives access to CSS @Media functionality
+import { Spring, animated } from 'react-spring' //React Animation
+
+import Links from './Links'; //Navigation Links
+
+//The different pages for the portfolio Website
+import HomePage from './HomePage';
+import About from './About';
+import Contact from './Contact';
+import Projects from './Projects'; 
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor() {
+        super();
+        this.state = {
+            toggleMenu: false,
+        }
+    }
+    handleMenuBtn = () => {
+        if(this.state.toggleMenu === true) {
+            this.setState({toggleMenu : false});
+        } else {
+            this.setState({toggleMenu : true});
+        }
+    }
+
+    render() {
+        let menuBtnClass = ["menuBtn"];
+        if(this.state.toggleMenu) {
+            menuBtnClass.push('showMenu');
+        }
+        return (
+        <div className="App">
+            <Router>
+                <Route render={({ location }) => (
+                    <div>
+                        {/*Navigation Menu For Full Size Page */}
+                        <div className='navContainer'>
+                        <Media query="(min-width: 769px)">
+                            <div>
+                                <Links />
+                            </div>
+                        </Media>
+                        {/*Navigation Menu For Mobile*/}
+                        <Media query="(max-width: 768px)">
+                            <div>
+                                <div className='menuContainer'>
+                                    <li className='menuTitle'>Keith's Portfolio</li>
+                                    <li className={menuBtnClass.join(' ')} onClick={this.handleMenuBtn}>
+                                        <div className='btnLine'></div>
+                                        <div className='btnLine'></div>
+                                        <div className='btnLine'></div> 
+                                    </li>
+                                </div>
+                                <Spring
+                                    native
+                                    force
+                                    config={{ tension: 500, friction: 50, precision: 1} }
+                                    from={{
+                                        height: this.state.toggleMenu ? 0 : 'auto',
+                                        opacity: 0,
+                                        display: 'none'
+                                    }}
+                                    to={{
+                                        height: this.state.toggleMenu ? 'auto' : 0,
+                                        opacity: 1,
+                                        display: 'block'
+                                    }}
+                                >
+                                 {props => (
+                                    <animated.div style={props}>
+                                        {this.state.toggleMenu ? <Links /> : null}
+                                    </animated.div>
+                                )}
+                                </Spring>
+                            </div>
+                        </Media>
+                        </div>
+                        {/*Creates Animation during Transition*/}
+                        <TransitionGroup>
+                            <CSSTransition key={location.key} classNames="fade" timeout={300}>
+                                <Switch location={location}>
+                                    <Route exact path='/' render={() => <HomePage />}  />
+                                    <Route path='/About' render={() => <About />}  />
+                                    <Route path='/Projects' render={() => <Projects />}  />
+                                    <Route path='/Contact' render={() => <Contact />}  />
+                                </Switch>
+                            </CSSTransition>
+                        </TransitionGroup>
+                    </div>
+                )}/>
+            </Router>
+        </div>
+        );
+    }
 }
 
 export default App;
