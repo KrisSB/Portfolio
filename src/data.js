@@ -1,7 +1,7 @@
 export default [
     {
         class: 'content-projects1',
-        img: 'http://localhost:3000/projects/vgwebsite.jpg',
+        img: '/projects/vgwebsite.jpg',
         alt: 'React-Laravel',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/Laravel-React-Website',
@@ -10,7 +10,7 @@ export default [
     },
     {
         class: 'content-projects2',
-        img: 'http://localhost:3000/projects/lsapp.jpg',
+        img: '/projects/lsapp.jpg',
         alt: 'Laravel',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/Laravel-Website',
@@ -19,7 +19,7 @@ export default [
     },
     {
         class: 'content-projects3',
-        img: 'http://localhost:3000/projects/sbe.jpg',
+        img: '/projects/sbe.jpg',
         alt: 'SBE',
         href: 'http://www.shadowbaneemulator.com',
         github: 'https://github.com/KrisSB/SBE',
@@ -28,7 +28,7 @@ export default [
     },
     {
         class: 'content-projects4',
-        img: 'http://localhost:3000/projects/calc.jpg',
+        img: '/projects/calc.jpg',
         alt: 'Character Builder',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/CharacterBuilder',
@@ -37,7 +37,7 @@ export default [
     },
     {
         class: 'content-projects5',
-        img: 'http://localhost:3000/projects/portfolio.jpg',
+        img: '/projects/portfolio.jpg',
         alt: 'Portfolio',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/Portfolio',
@@ -46,7 +46,7 @@ export default [
     },
     {
         class: 'content-projects6',
-        img: 'http://localhost:3000/projects/deckbuilder.jpg',
+        img: '/projects/deckbuilder.jpg',
         alt: 'Deckbuilder',
         href: 'http://www.shadowbaneemulator.com',
         github: 'https://github.com/KrisSB/Deckbuilder',
