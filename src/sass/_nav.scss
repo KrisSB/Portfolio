@@ -1,0 +1,107 @@
+.navContainer {
+    background: linear-gradient(#222,#444);
+    background-color: #222;
+    width: 100%;
+    margin: auto auto;
+}
+.navBar {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    width: 80%;
+    margin: auto auto;
+    font-size: 32px;
+}
+.navLink {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+}
+.navLink:hover {
+    background: linear-gradient(#444,#666);;
+}
+.navBar a {
+    color: #F0F0F0;
+    text-decoration: none;
+}
+.navBar a:hover {
+    color: #CCC;
+    text-decoration: underline;
+}
+.menuContainer {
+    display: none;
+}
+.menuBtn, .menuTitle {
+    display: none;
+}
+@media only screen and (max-width: 768px) {
+    .navContainer {
+        background: #222;
+    }
+    .navLink:hover {
+        background: #444;
+    }
+    .menu {
+        width: 100%;
+        font-size: 26px;
+    }
+    .navBar {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    .navLink a {
+        font-size: 26px;
+    }
+    .menuContainer {
+        display: flex;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        align-items: baseline;
+        width: 80%;
+        margin: auto auto;
+        font-size: 26px;
+        color: #F0F0F0;
+    }
+    .menuTitle {
+        width: 90%;
+    }
+    .menuBtn {
+        cursor: pointer;
+        float: right;
+        @include easeOut;
+        
+        .btnLine {
+            width: 28px;
+            height: 3px;
+            margin: 0 0 5px 0;
+            background: #F0F0F0;
+            @include easeOut;
+        }
+
+        &.showMenu {
+            transform: rotate(180deg);
+
+            .btnLine {
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(5px, 5px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -6px);
+                }
+            }
+        }
+    }
+    .menuBtn, .menuTitle  {
+        display: inline-block;
+    }
+
+}
