@@ -1,7 +1,7 @@
 export default [
     {
         class: 'content-projects1',
-        img: 'Portfolio/projectimg/vgwebsite.jpg',
+        img: '/projectimg/vgwebsite.jpg',
         alt: 'React-Laravel',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/Laravel-React-Website',
