@@ -1,0 +1,13 @@
+
+//For all the mixins
+@import 'config.scss';
+
+//Global CSS
+@import 'global.scss';
+@import 'nav.scss';
+
+//Sass pages for the various web pages
+@import 'home.scss';
+@import 'about.scss';
+@import 'projects.scss';
+@import 'contact.scss';

@@ -1,0 +1,49 @@
+#contact {
+    $home-image: url('../images/contact.jpg');
+    @include background($home-image);
+}
+.contact-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 30px;
+}
+.content-contact {
+    font-size: 32px;
+    background-color: $secondary-color;
+    box-shadow: 2px 2px 2px 2px #000;
+    @include easeOut;
+    padding: 20px;
+    text-align: center;
+    a {
+        color: #FFF;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+.content-contact:hover {
+    transform: scale(1.1);
+    @include easeOut;
+}
+@mixin contactSmMdLg {
+    .contact-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-column-gap: 50px;
+        grid-row-gap: 30px;
+    }
+}
+@include mediaLg{
+    @include contactSmMdLg;
+}
+@include mediaMd{
+    @include contactSmMdLg;
+}
+@include mediaSm{
+    @include contactSmMdLg;
+    .content-contact {
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {  
+    background-color: $primary-color;
+    color: $text-color;
+    line-height: 1.5;
+    overflow: hidden;
+}
+#container {
+    width: 80%;
+    margin: auto auto;
+}
+.content-container {
+    margin-top: 2rem;
+}
+.page {
+    height: 100vh;
+}
+h1 {
+    &.title{
+        font-size: 7rem;
+    }
+}
+h2 {
+    &.sm-heading {
+        margin-left: 10rem;
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+    }
+}
+.text-secondary {
+    color: $secondary-color;
+}
+
+
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+@media screen and (max-width: 1750px) {
+    body {
+        overflow: scroll;
+    }
+}
