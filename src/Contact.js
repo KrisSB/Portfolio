@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import Media from "react-media"; //Gives access to CSS @Media functionality
 
 export default class About extends Component {
-    componentDidMount() {
-        document.body.classList.add('contact');
-        console.log(window.innerWidth); 
-    }
     render() {
         return (
             <div className='page' id='contact'>
@@ -29,7 +25,7 @@ export default class About extends Component {
                                 <a href='Mailto:kelava91@gmail.com'>Email: kelava91@gmail.com</a>
                             </div>
                             <div className='content-contact contact-address'>
-                                Address: 329 Oak Ridge
+                                Address: 329 Oak Ridge, Mason, MI
                             </div>
                         </div>
                     </h1>

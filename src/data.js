@@ -12,7 +12,7 @@ export default [
         class: 'content-projects2',
         img: '/projectimg/lsapp.jpg',
         alt: 'Laravel',
-        href: 'http://142.93.119.73/',
+        href: 'http://104.248.239.6/',
         github: 'https://github.com/KrisSB/Laravel-Website',
         about: 'This website was my first time using laravel. It focused heavily on a wiki - esque video game based site where the user could create a wiki for a video game and then add tips to the page. After a user added a game or tip, a moderator would have to accept it before it was pushed to the public. The website uses Laravels Gates and Policies to determine if a user has access to do things such as add, edit, or push data.',
         skills: ['Laravel', 'Nodejs', 'PHP']
@@ -28,27 +28,27 @@ export default [
     },
     {
         class: 'content-projects4',
-        img: '/projectimg/calc.jpg',
-        alt: 'Character Builder',
-        href: 'http://142.93.119.73/',
-        github: 'https://github.com/KrisSB/CharacterBuilder',
-        about: 'Old character builder I made in 2014 This character builder was made primarily with Object Oriented Javascript. I used php to query information from the database. Other than the database, it was made purely with Javascript. This was my first big project using javascript.',
-        skills: ['OOJS', 'Vanilla JS']
-    },
-    {
-        class: 'content-projects5',
         img: '/projectimg/portfolio.jpg',
         alt: 'Portfolio',
-        href: 'http://142.93.119.73/',
+        href: 'https://krissb.github.io/Portfolio/',
         github: 'https://github.com/KrisSB/Portfolio',
         about: 'This website was made using React in the front-end and Sass and help design the webpage. It uses React Spring to animate the navigation bar as well as the projects page. It uses React router to seemlessly change between the pages. It also takes advantage of Sass to create mixins for the css as well as sass functions to change the backgrounds. CSS Flex was used for the navigation bar and CSS grid was used for the about, projects, and contact pages.',
         skills: ['Flex','Grid','React','React Router','React Spring','Sass']
     },
     {
+        class: 'content-projects5',
+        img: '/projectimg/calc.jpg',
+        alt: 'Character Builder',
+        href: 'http://bigtimestrat.com/Calc/',
+        github: 'https://github.com/KrisSB/CharacterBuilder',
+        about: 'Old character builder I made in 2014 This character builder was made primarily with Object Oriented Javascript. I used php to query information from the database. Other than the database, it was made purely with Javascript. This was my first big project using javascript.',
+        skills: ['OOJS', 'Vanilla JS']
+    },
+    {
         class: 'content-projects6',
         img: '/projectimg/deckbuilder.jpg',
         alt: 'Deckbuilder',
-        href: 'http://www.shadowbaneemulator.com',
+        href: 'http://bigtimestrat.com/MA/DeckBuilder',
         github: 'https://github.com/KrisSB/Deckbuilder',
         about: 'Website made in 2014 for a hearthstone Deckbuilder using jQuery. Never got around to finishing it but still shows a decent amount of jQuery',
         skills: ['AJAX','Javascript','jQuery']

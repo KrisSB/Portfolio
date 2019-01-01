@@ -46,7 +46,7 @@ class App extends Component {
                         <div className='navContainer'>
                         <Media query="(min-width: 769px)">
                             <div>
-                                <Links />
+                                <Links click={null} />
                             </div>
                         </Media>
                         {/*Navigation Menu For Mobile*/}
@@ -66,7 +66,7 @@ class App extends Component {
                                     force
                                     config={{ tension: 500, friction: 50, precision: 1} }
                                     from={{
-                                        height: this.state.toggleMenu ? 0 : 'auto',
+                                        height: 0,
                                         opacity: 0,
                                         display: 'none'
                                     }}
@@ -78,7 +78,10 @@ class App extends Component {
                                 >
                                  {props => (
                                     <animated.div style={props}>
-                                        {this.state.toggleMenu ? <Links /> : null}
+                                        {this.state.toggleMenu ? 
+                                        <Links
+                                            click={this.handleMenuBtn}
+                                        /> : null}
                                     </animated.div>
                                 )}
                                 </Spring>

@@ -74,6 +74,7 @@
 }
 .projectPopUp {
     color: #000;
+    box-shadow: 4px 4px 4px 6px #222;
     .popUpContainer {
         padding: 50px;
         display: grid;
@@ -85,15 +86,15 @@
         width: 350px;
         height: 350px;
     }
-    .popUpImg {
+    .popUp0 {
         grid-row-start: 1;
         grid-row-end: 3;
     }
-    .popUpAbout, .popUpSkills {
+    .popUp1, .popUp2 {
         text-align: left;
         padding-left: 50px;
     }
-    .popUpLinks {
+    .popUp3 {
         padding-top: 50px;
         grid-column-start: 1;
         grid-column-end: 3;

@@ -23,11 +23,11 @@ export default class About extends Component {
                         </div>
                         <div className='content-about content-about3'>
                             <span className='text-secondary'> Skills:</span> 
-                            <p> 
+                            <div>
                                 <p>Web Technologies & Frameworks: Laravel, ReactJS, HTML5, CSS3.0, PHP</p>
                                 <p>Scripts/UI: JavaScript, OOJS, JQuery, AJAX, JSON, Fetch, BootStrap, Flex, Grid</p>
 
-                            </p>
+                            </div>
                         </div>
                         <div className='content-about content-about4'>
                             <span className='text-secondary'> Back-end Development:</span> 

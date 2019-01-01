@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component , Fragment} from 'react';
 import data from './data'; //This page holds all of the data for the projects
-import { Spring , animated } from 'react-spring'; //React spring is used for the animations on the page
+import { Keyframes, Spring , animated } from 'react-spring'; //React spring is used for the animations on the page
 import Media from 'react-media';
 
+const Content = Keyframes.Trail({
+    open: { opacity: 1, from: { opacity: 0 }, delay: 1500 },
+    close: { opacity: 0, delay: 0 },
+})
+let items = []
 export default class Projects extends Component {
     
     constructor() {
@@ -10,9 +15,10 @@ export default class Projects extends Component {
         this.state = {
             data,
             toggle: false,
-            popUpDone: false,
             popupInfo: { },
-            popupSize: .4
+            popupSize: .4,
+            popupWidth: 1100,
+            popupHeight: 600
         }
     }
     handleClick = (e, github,about,skills,link) => {
@@ -27,16 +33,25 @@ export default class Projects extends Component {
             top: e.target.y,
             left: e.target.x,
             width: e.target.width,
-            height: e.target.height,
-            img: e.target.src,
-            alt: e.target.alt,
-            link: link,
-            github: github,
-            about: about,
-            skills: skillList
+            height: e.target.height
         }
         this.setState({ popupInfo });
+        this.setItems(e.target.src,link,skillList,about,github,e.target.alt);
         this.setState({ toggle : true });
+    }
+    setItems = (img,link,skills,about,github,alt) => {
+        items = [
+            <img src={img} alt={alt} />,
+            <Fragment>
+                <div className='popUpHeader'>About Page:</div>
+                <div className='popUpInfo'>{about}</div>
+            </Fragment>,
+            <Fragment>
+                <div className='popUpHeader'>Skills:</div>
+                <div className='popUpInfo'>{skills}</div>
+            </Fragment>,
+            <Fragment>Links: <a href={link}>Website </a> <a href={github}>Git Hub</a></Fragment>
+        ]
     }
     handleSkills = (skills) => {
         let map = skills.map(skill => {
@@ -49,22 +64,22 @@ export default class Projects extends Component {
     }
     handleClickPopup = () => {
         this.setState({ toggle : false })
-        this.setState({ popUpDone : false })
     }
     render() {
+        const state = this.state.toggle ? 'open' : 'close';
         //Maps all of the projects for the initial page, data is passed from data.js into the state data
         let projects = this.state.data.map(project=> {
             return <div key={project.class} className={`content-projects ${project.class}`}>
-                            <Media query="(min-width: 1501px)">
-                                <div className='project-image'><img src={project.img} alt={project.alt} onClick={(e) => this.handleClick(e,project.github, project.about, project.skills, project.href)} /></div>
-                            </Media>
-                            <Media query="(max-width: 1500px)">
-                                <div className='project-image'><a href={project.github}><img src={project.img} alt={project.alt} /></a></div>
-                            </Media>
-                            <div className='project-info'>Click Image for more information</div>
-                            <span>Links: </span>
-                            <span className='project-link'><a href={project.href}>Website </a></span>
-                            <span className='project-git'><a href={project.github}>GitHub</a></span>
+                        <Media query="(min-width: 1501px)">
+                            <div className='project-image'><img src={project.img} alt={project.alt} onClick={(e) => this.handleClick(e,project.github, project.about, project.skills, project.href)} /></div>
+                        </Media>
+                        <Media query="(max-width: 1500px)">
+                            <div className='project-image'><a href={project.github}><img src={project.img} alt={project.alt} /></a></div>
+                        </Media>
+                        <div className='project-info'>Click Image for more information</div>
+                        <span>Links: </span>
+                        <span className='project-link'><a href={project.href}>Website </a></span>
+                        <span className='project-git'><a href={project.github}>GitHub</a></span>
                     </div>
         })
         return (
@@ -91,27 +106,31 @@ export default class Projects extends Component {
                             }}
                             to= {{
                                 //Centers the inner popup
-                                top: window.innerHeight * this.state.popupSize / 2, 
-                                left: window.innerWidth * this.state.popupSize / 2,
+                                top: (window.innerHeight - this.state.popupHeight) / 2, 
+                                left: (window.innerWidth - this.state.popupWidth) / 2,
                                 //Determines the size of the popup
-                                height: window.innerHeight - (window.innerHeight * this.state.popupSize),
-                                width: window.innerWidth- (window.innerWidth * this.state.popupSize),
+                                height: this.state.popupHeight,
+                                width: this.state.popupWidth,
                             }}
                         >
 
                             {props => (
                                 <animated.div className='projectPopUp' style={props}>
+                                    {/* Content is a keyframe trail from react spring */}
                                     <div className='popUpContainer'>
-                                        <div className='popUpImg'><img src={this.state.popupInfo.img} alt={this.state.popupInfo.alt} /></div>
-                                        <div className='popUpAbout'>
-                                            <div className='popUpHeader'>About Page:</div>
-                                            <div className='popUpInfo'>{this.state.popupInfo.about}</div>
-                                        </div>
-                                        <div className='popUpSkills'>
-                                            <div className='popUpHeader'>Skills:</div>
-                                            <div className='popUpInfo'>{this.state.popupInfo.skills}</div>
-                                        </div>
-                                        <div className='popUpLinks'>Links: <a href={this.state.popupInfo.link}>Website </a> <a href={this.state.popupInfo.github}>Git Hub</a></div>
+                                        <Content
+                                            native
+                                            items={items}
+                                            keys={items.map((_, i) => i)}
+                                            reverse={!this.state.toggle}
+                                            state={state}>
+                                            {(item, i) => ({ x, ...props }) => (
+                                            <animated.div className={'popUp' + i}
+                                                style={{ ...props}}>
+                                                {item}
+                                            </animated.div>
+                                            )}
+                                        </Content>
                                     </div>
                                 </animated.div>
                             )}
