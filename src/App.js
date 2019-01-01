@@ -93,6 +93,7 @@ class App extends Component {
                             <CSSTransition key={location.key} classNames="fade" timeout={300}>
                                 <Switch location={location}>
                                     <Route exact path='/' render={() => <HomePage />}  />
+                                    <Route exact path='/Portfolio' render={() => <HomePage />}  />
                                     <Route path='/About' render={() => <About />}  />
                                     <Route path='/Projects' render={() => <Projects />}  />
                                     <Route path='/Contact' render={() => <Contact />}  />

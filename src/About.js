@@ -13,21 +13,12 @@ export default class About extends Component {
                             <div className='about-image'></div>
                         </div>
                         <div className='content-about2'>
-                            <span className='text-secondary'> Passion:</span> 
-                            <p> 
-                                I love web development, the first time I made a webpage was in 2013. 
-                                My computer science teacher had us create our own webpage throughout the semester. from there I would go home and mess around making geocities websites.
-                                I got back into web design my junior year of high school learning CSS and finally delved into php and back-end development, 
-                                I was hooked ever since.
-                            </p>
+                            <span className='text-secondary'> Web Technologies</span> 
+                            <p>Web Technologies & Frameworks: Laravel, ReactJS, HTML5, CSS3.0, PHP, LEMP Stack, LAMP Stack, Digital Ocean, Cloud</p>
                         </div>
                         <div className='content-about content-about3'>
                             <span className='text-secondary'> Skills:</span> 
-                            <div>
-                                <p>Web Technologies & Frameworks: Laravel, ReactJS, HTML5, CSS3.0, PHP</p>
-                                <p>Scripts/UI: JavaScript, OOJS, JQuery, AJAX, JSON, Fetch, BootStrap, Flex, Grid</p>
-
-                            </div>
+                            <p>Scripts/UI: JavaScript, OOJS, JQuery, AJAX, JSON, Fetch, BootStrap, Flex, Grid</p>
                         </div>
                         <div className='content-about content-about4'>
                             <span className='text-secondary'> Back-end Development:</span> 
@@ -39,7 +30,7 @@ export default class About extends Component {
                         <div className='content-about content-about5'>
                             <span className='text-secondary'> Front-end Development:</span> 
                             <p> 
-                                I love front-end development, whether it's the ability to deal with events, or the through the use of animations. Front-end development has so many tools now to create Dynamic and beautiful websites.
+                                I love front-end development, whether it's the ability to deal with events and my favorite, the use of animations. Front-end development has so many tools now to create Dynamic and beautiful websites.
                             </p>
                         </div>
                         <div className='content-about content-about6'>

@@ -5,7 +5,7 @@ export default [
         alt: 'React-Laravel',
         href: 'http://142.93.119.73/',
         github: 'https://github.com/KrisSB/Laravel-React-Website',
-        about: 'This website was made using both Laravel and React, with a stronger emphasis on react. The website uses a lot of fetch requests to get information from the database, to create seemless Single Page Applications. The main features of the project were focused around filtering Articles using both a sorter focused on letter and a search bar where you can look up a page instantly.',
+        about: 'This website was made using both Laravel and React, with a stronger emphasis on react. The website uses a lot of fetch requests to get information from the database, to create seemless Single Page Applications. The main features of the project were focused around filtering Articles using both a sorter focused on letter and a search bar where you can look up a page instantly. This website was deployed on Digital Ocean using a LEMP Stack',
         skills: [ 'Fetch / Promises','jSON', 'Laravel', 'Nodejs','React','REST APIs', 'Single Page Application Development']
     },
     {
@@ -14,7 +14,7 @@ export default [
         alt: 'Laravel',
         href: 'http://104.248.239.6/',
         github: 'https://github.com/KrisSB/Laravel-Website',
-        about: 'This website was my first time using laravel. It focused heavily on a wiki - esque video game based site where the user could create a wiki for a video game and then add tips to the page. After a user added a game or tip, a moderator would have to accept it before it was pushed to the public. The website uses Laravels Gates and Policies to determine if a user has access to do things such as add, edit, or push data.',
+        about: 'This website was my first time using laravel. It focused heavily on a wiki - esque video game based site where the user could create a wiki for a video game and then add tips to the page. After a user added a game or tip, a moderator would have to accept it before it was pushed to the public. The website uses Laravels Gates and Policies to determine if a user has access to do things such as add, edit, or push data. This website was deployed on Digital Ocean using a LEMP Stack',
         skills: ['Laravel', 'Nodejs', 'PHP']
     },
     {
