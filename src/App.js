@@ -16,6 +16,7 @@ import HomePage from './HomePage';
 import About from './About';
 import Contact from './Contact';
 import Projects from './Projects'; 
+import NoMatch from './NoMatch';
 
 class App extends Component {
     constructor() {
@@ -96,6 +97,7 @@ class App extends Component {
                                     <Route path='/About' render={() => <About />}  />
                                     <Route path='/Projects' render={() => <Projects />}  />
                                     <Route path='/Contact' render={() => <Contact />}  />
+                                    <Route component={NoMatch} />
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>

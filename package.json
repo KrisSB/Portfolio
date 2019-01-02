@@ -15,7 +15,7 @@
     "react-spring": "^7.2.5",
     "react-transition-group": "^2.5.2"
   },
-  "homepage": "https://krissb.github.io/Portfolio/",
+  "homepage": "https://www.keithsportfolio.com",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
