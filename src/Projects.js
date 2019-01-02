@@ -4,7 +4,7 @@ import { Keyframes, Spring , animated } from 'react-spring'; //React spring is u
 import Media from 'react-media';
 
 const Content = Keyframes.Trail({
-    open: { opacity: 1, from: { opacity: 0 }, delay: 1500 },
+    open: { x: 0, opacity: 1, from: {x: -50, opacity: 0 }, delay: 1500 },
     close: { opacity: 0, delay: 0 },
 })
 let items = []
@@ -126,7 +126,9 @@ export default class Projects extends Component {
                                             state={state}>
                                             {(item, i) => ({ x, ...props }) => (
                                             <animated.div className={'popUp' + i}
-                                                style={{ ...props}}>
+                                                style={{ ...props,
+                                                    transform: x.interpolate(x => `translate3d(${x}%,0,0)`),
+                                                }}>
                                                 {item}
                                             </animated.div>
                                             )}
