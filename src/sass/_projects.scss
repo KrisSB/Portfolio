@@ -75,6 +75,13 @@
 .projectPopUp {
     color: #000;
     box-shadow: 4px 4px 4px 6px #222;
+    .popUpClose {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        font-size: 28px;
+        cursor: pointer;
+    }
     .popUpContainer {
         padding: 50px;
         display: grid;

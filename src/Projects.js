@@ -18,12 +18,15 @@ export default class Projects extends Component {
             popupInfo: { },
             popupSize: .4,
             popupWidth: 1100,
-            popupHeight: 600
+            popupHeight: 600,
+            heightOffset: 0
         }
     }
     handleClick = (e, github,about,skills,link) => {
         //Gets the starting position, size and other needed variables to pass into the div created what toggle = true
         let skillList;
+        let heightOffset = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
+        console.log(window.innerHeight + heightOffset);
         if(skills) {
             skillList = this.handleSkills(skills)
         } else {
@@ -33,7 +36,8 @@ export default class Projects extends Component {
             top: e.target.y,
             left: e.target.x,
             width: e.target.width,
-            height: e.target.height
+            height: e.target.height,
+            heightOffset: heightOffset
         }
         this.setState({ popupInfo });
         this.setItems(e.target.src,link,skillList,about,github,e.target.alt);
@@ -70,10 +74,10 @@ export default class Projects extends Component {
         //Maps all of the projects for the initial page, data is passed from data.js into the state data
         let projects = this.state.data.map(project=> {
             return <div key={project.class} className={`content-projects ${project.class}`}>
-                        <Media query="(min-width: 1501px)">
+                        <Media query="(min-width: 1280px)">
                             <div className='project-image'><img src={project.img} alt={project.alt} onClick={(e) => this.handleClick(e,project.github, project.about, project.skills, project.href)} /></div>
                         </Media>
-                        <Media query="(max-width: 1500px)">
+                        <Media query="(max-width: 1279px)">
                             <div className='project-image'><a href={project.github}><img src={project.img} alt={project.alt} /></a></div>
                         </Media>
                         <div className='project-info'>Click Image for more information</div>
@@ -106,7 +110,7 @@ export default class Projects extends Component {
                             }}
                             to= {{
                                 //Centers the inner popup
-                                top: (window.innerHeight - this.state.popupHeight) / 2, 
+                                top: ((window.innerHeight - this.state.popupHeight) / 2) + this.state.popupInfo.heightOffset, 
                                 left: (window.innerWidth - this.state.popupWidth) / 2,
                                 //Determines the size of the popup
                                 height: this.state.popupHeight,
@@ -117,6 +121,7 @@ export default class Projects extends Component {
                             {props => (
                                 <animated.div className='projectPopUp' style={props}>
                                     {/* Content is a keyframe trail from react spring */}
+                                    <div className='popUpClose' onClick={this.handleClickPopup}>X</div>
                                     <div className='popUpContainer'>
                                         <Content
                                             native
