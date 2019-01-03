@@ -12,10 +12,10 @@ import { Spring, animated } from 'react-spring' //React Animation
 import Links from './Links'; //Navigation Links
 
 //The different pages for the portfolio Website
-import HomePage from './HomePage';
-import About from './About';
-import Contact from './Contact';
-import Projects from './Projects'; 
+import HomePage from './Homepage/HomePage';
+import About from './About/About';
+import Contact from './Contact/Contact';
+import Projects from './Projects/Projects'; 
 import NoMatch from './NoMatch';
 
 class App extends Component {

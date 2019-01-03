@@ -30,7 +30,7 @@ export default class About extends Component {
                         <div className='content-about content-about5'>
                             <span className='text-secondary'> Front-end Development:</span> 
                             <p> 
-                                I love front-end development, whether it's the ability to deal with events and my favorite, the use of animations. Front-end development has so many tools now to create Dynamic and beautiful websites.
+                                I love front-end development, whether it's the ability to deal with events, the use of animations, or dictating how the page functions. Front-end development has so many tools now to create dynamic and beautiful websites.
                             </p>
                         </div>
                         <div className='content-about content-about6'>
