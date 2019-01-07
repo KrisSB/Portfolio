@@ -15,7 +15,7 @@ export default class HomePage extends Component {
                             </h1>
                         </div>
                         <div className='description'>
-                            <h2 className='sm-heading'>Web Developer, Designer, Software Engineer</h2>
+                            <h2 className='sm-heading'>Web Developer and Designer</h2>
                         </div>
                     </div>
                 </div>

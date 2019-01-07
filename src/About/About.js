@@ -14,26 +14,28 @@ export default class About extends Component {
                         </div>
                         <div className='content-about2'>
                             <span className='text-secondary'> Web Technologies</span> 
-                            <p>Web Technologies & Frameworks: Laravel, ReactJS, HTML5, CSS3.0, PHP, LEMP Stack, LAMP Stack, Digital Ocean, Cloud</p>
+                            <p><b>Web Technologies & Frameworks:</b> Laravel, ReactJS, HTML5, CSS3.0, PHP</p>
+                            <p><b>Scripts/UI:</b> JavaScript, OOJS, JQuery, AJAX, JSON, Fetch, BootStrap, Flex, Grid</p>
+                            <p><b>Database and ORM:</b> MySQL</p>
+                            <p><b>Web Debug Tools:</b> Mozilla Firefox developer tools, Chrome developer tools</p>
+                            <p><b>Application/Web Server:</b> Apache, Nginx</p>
+                            <p><b>Versioning and other tools:</b> GitHub</p>
+                            <p><b>Cloud:</b> DigitalOcean</p>
                         </div>
                         <div className='content-about content-about3'>
-                            <span className='text-secondary'> Skills:</span> 
-                            <p>Scripts/UI: JavaScript, OOJS, JQuery, AJAX, JSON, Fetch, BootStrap, Flex, Grid</p>
-                        </div>
-                        <div className='content-about content-about4'>
                             <span className='text-secondary'> Back-end Development:</span> 
                             <p> 
                                 For a long time my primary focus was on back-end development with PHP. 
                                 It came much easier to me and loved the pages you create with it, especially due to having access to a database.
                             </p>
                         </div>
-                        <div className='content-about content-about5'>
+                        <div className='content-about content-about4'>
                             <span className='text-secondary'> Front-end Development:</span> 
                             <p> 
                                 I love front-end development, whether it's the ability to deal with events, the use of animations, or dictating how the page functions. Front-end development has so many tools now to create dynamic and beautiful websites.
                             </p>
                         </div>
-                        <div className='content-about content-about6'>
+                        <div className='content-about content-about5'>
                             <span className='text-secondary'> A Yearning for Learning:</span> 
                             <p> 
                                 With all the frameworks coming out for web development, it is a pleasure to learn web development. 
