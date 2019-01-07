@@ -19,7 +19,7 @@ export default class About extends Component {
                             <p><b>Database and ORM:</b> MySQL</p>
                             <p><b>Web Debug Tools:</b> Mozilla Firefox developer tools, Chrome developer tools</p>
                             <p><b>Application/Web Server:</b> Apache, Nginx</p>
-                            <p><b>Versioning and other tools:</b> GitHub</p>
+                            <p><b>Versioning and other tools:</b> Git</p>
                             <p><b>Cloud:</b> DigitalOcean</p>
                         </div>
                         <div className='content-about content-about3'>
